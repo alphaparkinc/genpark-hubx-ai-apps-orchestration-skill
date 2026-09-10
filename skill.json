@@ -1,0 +1,55 @@
+{
+  "name": "genpark-hubx-ai-apps-orchestration-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - HubX intelligent AI apps portfolio, multi-model AI chatbot orchestration, vision diagnostics & generative tools.",
+  "author": "genpark",
+  "category": "ai-productivity-and-lifestyle",
+  "tags": [
+    "hubx",
+    "nova-chatbot",
+    "plantapp",
+    "davinci-art",
+    "momo-portrait",
+    "noteai-meetings",
+    "betterspeak-tutor",
+    "agentic-workflow",
+    "mcp-server"
+  ],
+  "inputs": {
+    "app": {
+      "type": "string",
+      "enum": [
+        "nova",
+        "plantapp",
+        "davinci",
+        "noteai",
+        "betterspeak"
+      ],
+      "description": "Target HubX AI application service to invoke"
+    },
+    "action": {
+      "type": "string",
+      "description": "Operation to execute (e.g. chat_query, identify_plant, generate_art, summarize_meeting, language_feedback)"
+    },
+    "params": {
+      "type": "object",
+      "description": "Application-specific execution arguments"
+    }
+  },
+  "outputs": {
+    "success": {
+      "type": "boolean"
+    },
+    "app": {
+      "type": "string"
+    },
+    "result": {
+      "type": "object"
+    },
+    "execution_time_ms": {
+      "type": "number"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
