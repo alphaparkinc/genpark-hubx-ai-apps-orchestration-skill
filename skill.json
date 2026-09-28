@@ -1,55 +1,40 @@
 {
   "name": "genpark-hubx-ai-apps-orchestration-skill",
-  "version": "1.0.0",
-  "description": "GenPark AI Agent Skill - HubX intelligent AI apps portfolio, multi-model AI chatbot orchestration, vision diagnostics & generative tools.",
-  "author": "genpark",
-  "category": "ai-productivity-and-lifestyle",
+  "version": "1.1.0",
+  "description": "GenPark AI Agent Skill - HubX intelligent AI apps portfolio, multi-model chatbot orchestration, vision diagnostics & generative tools distilled from hubx.co/products.",
+  "category": "Service",
+  "author": "AlphaPark",
   "tags": [
     "hubx",
-    "nova-chatbot",
+    "nova",
     "plantapp",
-    "davinci-art",
-    "momo-portrait",
-    "noteai-meetings",
-    "betterspeak-tutor",
-    "agentic-workflow",
-    "mcp-server"
+    "davinci",
+    "momo",
+    "homeai",
+    "lean",
+    "noteai",
+    "mcp"
   ],
-  "inputs": {
-    "app": {
-      "type": "string",
-      "enum": [
-        "nova",
-        "plantapp",
-        "davinci",
-        "noteai",
-        "betterspeak"
-      ],
-      "description": "Target HubX AI application service to invoke"
+  "tools": [
+    {
+      "name": "route_hubx_app",
+      "description": "Automatically classify and dispatch user requests to the optimal HubX app."
     },
-    "action": {
-      "type": "string",
-      "description": "Operation to execute (e.g. chat_query, identify_plant, generate_art, summarize_meeting, language_feedback)"
+    {
+      "name": "dispatch_nova_assistant",
+      "description": "Execute multi-model conversational query via Nova All-in-One AI."
     },
-    "params": {
-      "type": "object",
-      "description": "Application-specific execution arguments"
+    {
+      "name": "dispatch_vision_analysis",
+      "description": "Execute botanical (PlantApp) or nutrition/macro (Lean) visual diagnostics."
+    },
+    {
+      "name": "dispatch_generative_studio",
+      "description": "Execute artistic generation (DaVinci), portrait styling (Momo), or home redesign (HomeAI)."
+    },
+    {
+      "name": "run_benchmark_hubx_portfolio",
+      "description": "Run comprehensive end-to-end benchmark across all 10 HubX products."
     }
-  },
-  "outputs": {
-    "success": {
-      "type": "boolean"
-    },
-    "app": {
-      "type": "string"
-    },
-    "result": {
-      "type": "object"
-    },
-    "execution_time_ms": {
-      "type": "number"
-    }
-  },
-  "entrypoint": "client.py",
-  "example": "example_usage.py"
+  ]
 }
